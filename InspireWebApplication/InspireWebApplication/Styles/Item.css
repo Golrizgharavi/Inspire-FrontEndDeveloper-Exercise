@@ -1,0 +1,76 @@
+﻿
+
+
+.ItemHeader {
+    background-color: #e0f3c7;
+    height:400px;
+    margin:0 10%;
+}
+.formHolder{margin-top:-250px;height:700px;}
+.contactInfo{padding-bottom:40px;text-align:center; font-size:18px;}
+.contactInfo b {
+   color:#ff6a00;
+   font-style:italic;
+}
+.formTitle {
+    text-align: center;
+    font-size: 30px;
+    padding: 0 0 30px 0;
+    font-weight: bold;
+}
+
+.RFormUl input[type=text] {
+    min-width: 100%;
+    background-color: #eee;
+    border: 1px solid #666;
+    display: inline-block;
+    padding: 3px 5px;
+    margin-bottom: 10px;
+}
+
+.RFormUl textarea {
+    min-width: 100%;
+    background-color: #eee;
+    border: 1px solid #666;
+    display: inline-block;
+    padding: 3px 5px;
+}
+
+
+.btn-RSubmit {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    word-spacing: 10px;
+}
+
+.margin{margin:0 20%;}
+
+.panel-heading {
+    position: relative;
+}
+.panel-title > a {
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    color: #666 !important;
+    text-decoration: none;
+    padding-left:40px;
+    
+}
+.Ar-Icon {
+    background-image: url('../Images/down-arrow.png');
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -16px;
+    margin-left:10px;
+}
+
+
+

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Styles/Main.css" rel="stylesheet" />
+
+
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+
+    <script src="/App/app.js"></script>
+    <script src="services/authorService.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/contactController.js"></script>
+    <script src="controllers/faqController.js"></script>
+</head>
+<body ng-controller="mainController">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/" target="_blank" id="HomeMenu">Home</a></li>
+                    <li><a href="#/contact" target="_blank" id="ContactMenu">Contact</a></li>
+                    <li><a href="#/faq" target="_blank" id="FAQMenu">FAQ</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="ContentHolder">
+        <div ng-view>
+
+        </div>
+
+
+
+    </div>
+    <div class="Footer">
+        <div class="row FRow">
+            <div class="col-md-5 ">
+
+                <div class="myInfo">
+
+                    <span class="Content">
+                        <a href="#/faq" target="_blank" >FAQ</a>
+                        <a href="#/" target="_blank">What's New?</a>
+                        <a href="#/contact" target="_blank" >Contact Us</a>
+                    </span>
+                    <a href="javascript:void(0)" id="jumpTop"><i class="sm-icon top-arr"></i> Back to Top!</a>
+                </div>
+
+
+            </div>
+            <div class="col-md-7 ">
+                <h3>Join Our Mailing List!</h3>
+                <div class="subscribe">
+
+                    <form name="subscribeForm" ng-controller="subscribeForm">
+                        <input type="text" ng-model="email" name="email" placeholder="Email Address..." required ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" />
+                        <button type="button" ng-click="Subscribe()" class="btn-Subscribe" ng-disabled="subscribeForm.$invalid">Subscribe!</button>
+                        <span ng-show="subscribeForm.email.$dirty&&subscribeForm.email.$error.pattern" class="msgStyle"> Please Enter a Valid Email! :)</span>
+                        <div id="SubscribeMsg" class="msgStyle"></div>
+                        <!--{{subscribeForm.email.$valid}}-->
+                    </form>
+
+                </div>
+                <ul class="FSocialM">
+                    <li><a href="javascript:void(0)" class="sm-icon fb-ic"></a></li>
+                    <li><a href="javascript:void(0)" class="sm-icon tw-ic"></a></li>
+                    <li><a href="javascript:void(0)" class="sm-icon insta-ic"></a></li>
+                    <li><a href="javascript:void(0)" class="sm-icon yt-ic"></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <p>&copy; <span id="currentYear"></span> Inspire Angular JS App</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        $("#jumpTop").click(function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#ContentHolder").offset().top
+            }, 1000);
+        });
+
+        var CurrentYear = document.getElementById("currentYear");
+        CurrentYear.innerHTML = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

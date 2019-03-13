@@ -1,0 +1,61 @@
+﻿<head>
+    <link href="../../Styles/Item.css" rel="stylesheet" />
+</head>
+<div ng-controller="contactController as contactControllerVM">
+
+    <div class="ItemHeader">
+
+
+    </div>
+    <div class="row formHolder">
+        <div class="margin">
+            <div class="formTitle">Get in Touch!</div>
+            <div class="contactInfo">
+                <p>240-222-7777</p>
+                <p>info@my-domain.com</p>
+                <b>If you have any question and want to contact us, feel free to send us message!</b>
+            </div>
+            
+            <form name="vm.OrderForm" class="form-horizontal">
+                <ul class="RFormUl">
+
+                    <li>
+                        <input type="text" name="Name" id="Name" ng-model="contactControllerVM
+                           .Name" class="form-control" ng-maxlength="20" ng-minlength="2" placeholder="*Your Name..." required>
+                        <div ng-show="vm.OrderForm.$submitted || vm.OrderForm.Name.$touched">
+                            <div ng-show="vm.OrderForm.Name.$error.required">Required Feild!! :)</div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <input type="text" name="Phone" id="Phone" ng-model="contactControllerVM.Phone" class="form-control" placeholder="Your Phone...">
+
+                    </li>
+                    <li>
+
+                        <input type="text" name="Email" id="Email" ng-model="contactControllerVM.Email" class="form-control" ng-maxlength="20" ng-minlength="2" placeholder="*Your Email..." required ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                        <span ng-show="vm.OrderForm.Email.$dirty&&vm.OrderForm.Email.$error.pattern">Please Enter a Valid Email! :)</span>
+                    </li>
+
+                    <li>
+                        <textarea name="OContent" ng-model="contactControllerVM.OContent" id="OContent" rows="4" wrap="soft" placeholder="*Your Review..." class="form-control" required></textarea>
+                        <div ng-show="vm.OrderForm.$submitted || vm.OrderForm.taReview.$touched">
+                            <div ng-show="vm.OrderForm.OContent.$error.required">Required Feild!! :)</div>
+                        </div>
+                    </li>
+                    <li class="btnSubmitHolder">
+                        <button ng-click="contactControllerVM.Submit()" class="btn-RSubmit" ng-disabled="vm.OrderForm.$invalid"> Submit</button>
+
+                    </li>
+                    <li>
+                       * Required! :)
+                    </li>
+                </ul>
+                <div class="col-sm-2"></div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>

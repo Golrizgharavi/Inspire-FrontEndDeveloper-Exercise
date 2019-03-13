@@ -1,0 +1,38 @@
+﻿<div ng-controller="homeController as homeControllerVM">
+
+
+    <!--<h1>{{homeControllerVM.message}}</h1>-->
+    <div class="BGImg pImg1">      
+            <div class="pTopTxt">
+                <h1 class="Title">{{homeControllerVM.Obj.author}}</h1>
+                <i class="BD">Was born on {{homeControllerVM.Obj.birthday}}</i>
+                <span class="PBD">{{homeControllerVM.Obj.birthPlace}}</span>
+            </div>
+    </div>
+    <div class="contentSection">
+        <div class="midSection">
+            <span class="listTitle">{{homeControllerVM.Obj.author}}’s Latest Releases</span>
+            <select ng-model="sortorder">
+                <option value=''>Select Order</option>
+                <option value="+title">Title (A-Z)</option>
+                <option value="-title">Title (Z-A)</option>
+                <option value="-PublishDate">Publish Date</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-md-6" ng-repeat="book in homeControllerVM.Obj.books | orderBy:sortorder">
+                <div class="bookItem">
+                    <img src="{{book.imageUrl}}" alt="{{book.title}}" class="bookImg responsive" />
+                    <a href="{{book.purchaseLink}}" class="bookTitle" target="_blank" ng-class-even="'even'">{{book.title}}</a>
+                    <i class="line"></i>
+                    <i class="bookDec" ng-class-even="'even'">
+                        {{book.PublishDate}}
+
+                    </i>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
